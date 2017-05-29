@@ -30,7 +30,7 @@ function loadData(pageIdx)
 				$("#resultContainer").append(
 					"<div class='goods'>" +
 						"<a	href='"+hostpath+"customer/goods.jsp?goodsID="+n.goodsID+"' target='_blank'>" +
-							"<img src='"+hostpath+n.goodsPicturePath+"'>" +
+							"<img src='"+hostpath+"store/IMG/GoodsPicture/"+n.goodsPicturePath+"'>" +
 						"</a>" +
 						"<div class='goodsNameContainer'><p class='goodName'>"+n.goodsName+"</p></div>" +
 						"<p class='goodPrice'>￥"+n.price+"</p>" +

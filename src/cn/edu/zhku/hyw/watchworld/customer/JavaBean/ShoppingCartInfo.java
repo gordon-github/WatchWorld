@@ -11,15 +11,14 @@ public class ShoppingCartInfo
 	private String goodsPicturePath;
 	private float price;
 	private int amount; //购物车中商品的数量
-	private int SalesVolumes; //销量
+	private int number; //库存
 	
-	public int getSalesVolumes()
-	{
-		return SalesVolumes;
+
+	public int getNumber() {
+		return number;
 	}
-	public void setSalesVolumes(int salesVolumes)
-	{
-		SalesVolumes = salesVolumes;
+	public void setNumber(int number) {
+		this.number = number;
 	}
 	public int getGoodsID()
 	{

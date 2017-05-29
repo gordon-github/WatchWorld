@@ -30,7 +30,7 @@ function getData()
 
 function checkAmount()
 {
-	if(parseInt($("#amount").val())<=parseInt($("#SalesVolumes p").text()))
+	if(parseInt($("#amount").val())<=parseInt($("#Number p").text()))
 	{
 		return true;
 	}

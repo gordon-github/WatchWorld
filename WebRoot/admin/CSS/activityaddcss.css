@@ -1,10 +1,11 @@
 @CHARSET "UTF-8";
 #adminID{
+	float:right;
 	width:200px;
 	height:22px;
 	font-family:仿宋;
-	margin-left:1300px;
-	font-size:18px;
+/* 	margin-left:1100px;
+ */	font-size:18px;
 }
 .a,.a2
 {

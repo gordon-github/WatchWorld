@@ -21,7 +21,6 @@ import javax.servlet.http.HttpSession;
 						"/store/GoodsAddServlet",
 						"/store/GoodsShowServlet",
 						"/store/GoodsUpdateServlet",
-						"/store/LogOutServlet",
 						"/store/OrderShowServlet",
 						"/store/StoreUpdateServlet",
 						"/store/goods_add.jsp",
