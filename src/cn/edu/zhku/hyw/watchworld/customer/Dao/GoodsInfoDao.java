@@ -83,4 +83,60 @@ public class GoodsInfoDao
 		JdbcUtil.close(conn, pstmt, rs);
 		return info;
 	}
+	
+	/**
+	 * 更新商品库存
+	 * @param number
+	 * @param goodsID
+	 * @return
+	 */
+	public boolean updateNumberByGoodsID(int number, int goodsID)
+	{
+		boolean flag = false;
+		String sql = "update goods_info set Number=? where GoodsID=?";
+		try
+		{
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, number);
+			pstmt.setInt(2, goodsID);
+			if(pstmt.executeUpdate() == 1)
+			{
+				flag = true;
+			}
+		} catch (SQLException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		JdbcUtil.close(conn, pstmt);
+		return flag;
+	}
+	
+	/**
+	 * 更新商品的销量
+	 * @param sv
+	 * @param goodsID
+	 * @return
+	 */
+	public boolean updateSalesVolumesByGoodsID(int sv, int goodsID)
+	{
+		boolean flag = false;
+		String sql = "update goods_info set SalesVolumes=? where GoodsID=?";
+		try
+		{
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, sv);
+			pstmt.setInt(2, goodsID);
+			if(pstmt.executeUpdate() == 1)
+			{
+				flag = true;
+			}
+		} catch (SQLException e)
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		JdbcUtil.close(conn, pstmt);
+		return flag;
+	}
 }

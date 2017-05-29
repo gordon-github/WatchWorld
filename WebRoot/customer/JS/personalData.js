@@ -12,19 +12,26 @@ function getData()
 		dataType: "json",
 		success: function(data)
 		{
-			$("#portraitIMG").attr("src","/WatchWorld/"+data.portrait);
-			$("#userID").text(data.userID);
-			$("#userNameItem input").val(data.userName);
-			$("#ageItem input").val(data.age);
-			if(data.sex == "男")
+			if(data.status==302)
 			{
-				$("#sexItem [value='男']").attr("checked", "true");
+				location.href=hostpath+"rdHref";
 			}
 			else
 			{
-				$("#sexItem [value='女']").attr("checked", "true");
+				$("#portraitIMG").attr("src","/WatchWorld/"+data.portrait);
+				$("#userID").text(data.userID);
+				$("#userNameItem input").val(data.userName);
+				$("#ageItem input").val(data.age);
+				if(data.sex == "男")
+				{
+					$("#sexItem [value='男']").attr("checked", "true");
+				}
+				else
+				{
+					$("#sexItem [value='女']").attr("checked", "true");
+				}
+				$("#telephoneItem input").val(data.telephone);
 			}
-			$("#telephoneItem input").val(data.telephone);
 		}
 	});
 }
@@ -57,15 +64,22 @@ function submitForm()
 		dataType: "json",
 		success: function(data)
 		{
-			if(data.status=="true") //表单数据合法且已经保存到数据库中
+			if(json.status==302)
 			{
-				alert(data.saved);
+				location.href=hostpath+"rdHref";
 			}
 			else
 			{
-				$("#userNameItem .errorLab").text(data.userName);
-				$("#ageItem .errorLab").text(data.age);
-				$("#telephoneItem .errorLab").text(data.telephone);
+				if(data.status=="true") //表单数据合法且已经保存到数据库中
+				{
+					alert(data.saved);
+				}
+				else
+				{
+					$("#userNameItem .errorLab").text(data.userName);
+					$("#ageItem .errorLab").text(data.age);
+					$("#telephoneItem .errorLab").text(data.telephone);
+				}
 			}
 		}
 	});

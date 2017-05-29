@@ -9,7 +9,7 @@ public class GoodsInfo
 	private String Brand;
 	private String Color;
 	private String Model;
-	private int Number;
+	private int Number; //库存
 	private int StoreID;
 	private int SalesVolumes;
 	

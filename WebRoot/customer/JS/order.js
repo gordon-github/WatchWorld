@@ -24,13 +24,20 @@ function checkPwd()
 		data: 'password='+$("#pwd").val(),
 		success: function(data)
 		{
-			if(data == "true") //验证通过
+			if(data.status==302)
 			{
-				$("#paraForm").submit();
+				location.href=hostpath+"rdHref";
 			}
 			else
 			{
-				alert("密码错误！");
+				if(data == "true") //验证通过
+				{
+					$("#paraForm").submit();
+				}
+				else
+				{
+					alert("密码错误！");
+				}
 			}
 		}
 	});

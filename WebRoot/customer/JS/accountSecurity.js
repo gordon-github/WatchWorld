@@ -41,14 +41,21 @@ function submitForm()
 		dataType: "json",
 		success: function(data)
 		{
-			if(data.status=="true") //表单数据合法且已经保存到数据库中
+			if(data.status==302)
 			{
-				alert(data.saved);
+				location.href=hostpath+"rdHref";
 			}
 			else
 			{
-				$("#passwordItem .errorLab").text(data.password1);
-				$("#confirmPasswordItem .errorLab").text(data.password2);
+				if(data.status=="true") //表单数据合法且已经保存到数据库中
+				{
+					alert(data.saved);
+				}
+				else
+				{
+					$("#passwordItem .errorLab").text(data.password1);
+					$("#confirmPasswordItem .errorLab").text(data.password2);
+				}
 			}
 		}
 	});

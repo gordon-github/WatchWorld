@@ -13,16 +13,23 @@ function loadData()
 		dataType: "json",
 		success: function(json)
 		{
-			$.each(json, function(i,n)
+			if(json.status==302)
 			{
-				$("#contentTable").append("<tr class='contentTr' name='goodsItem' id='"+n.goodsID+"'>" +
-						"<td class='goodsNameTd'>" +
+				location.href=hostpath+"rdHref";
+			}
+			else
+			{
+				$.each(json, function(i,n)
+						{
+					$("#contentTable").append("<tr class='contentTr' name='goodsItem' id='"+n.goodsID+"'>" +
+							"<td class='goodsNameTd'>" +
 							"<img src='"+hostpath+n.goodsPicturePath+"'>" +
 							"<div class='goodsName'>" +
-								"<a href='"+hostpath+"customer/goods.jsp?goodsID="+n.goodsID+"'>" +
-										"<p>"+n.goodsName+"</p>" +
-								"</a>" +
+							"<a href='"+hostpath+"customer/goods.jsp?goodsID="+n.goodsID+"'>" +
+							"<p>"+n.goodsName+"</p>" +
+							"</a>" +
 							"</div>" +
+
 						"</td>" +
 						"<td class='price' name='priceTd'>"+n.price+"</td>" +
 						"<td class='amount' name='amountTd'><input type='number' min='1' max='"+n.number+"' class='amountVal' value='"+n.amount+"' onchange='calc()'><p>库存："+n.number+"</p></td>" +
@@ -30,8 +37,9 @@ function loadData()
 						"<td class='operate'><p onclick='delData("+n.goodsID+")'>删除</p></td>" +
 						"<td class='selection'><input type='checkbox' name='selectIt' onchange='calcTotal()' value='"+n.goodsID+"'></td>" +
 					"</tr>");
-			});
-			jsonData = json; //保存json数据为全局变量
+						});
+				jsonData = json; //保存json数据为全局变量
+			}
 		}
 	});
 }
@@ -148,8 +156,15 @@ function delData(goodsID)
 		url: hostpath+"customer/shoppingCart/delData?goodsID="+goodsID,
 		success: function(data)
 		{
-			$(".contentTr").remove();
-			loadData();
+			if(data.status==302)
+			{
+				location.href=hostpath+"rdHref";
+			}
+			else
+			{
+				$(".contentTr").remove();
+				loadData();
+			}
 		}
 	});
 }
