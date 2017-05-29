@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -71,8 +74,27 @@ public class OrderInfoDao
 				OrderInfo info = new OrderInfo();
 				info.setOrderID(rs.getString("OrderID"));
 				info.setOrderStatus(rs.getString("OrderStatus"));
-				info.setPaymentTime(rs.getString("PaymentTime"));
-				info.setSendGoodsTime(rs.getString("SendGoodsTime"));
+				
+				DateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss"); 
+				Timestamp paymentTime = rs.getTimestamp("PaymentTime");
+				if(paymentTime == null)
+				{
+					info.setPaymentTime("-");
+				}
+				else
+				{
+					info.setPaymentTime(sdf.format(paymentTime));
+				}
+				Timestamp sendGoodsTime = rs.getTimestamp("SendGoodsTime");
+				if(sendGoodsTime == null)
+				{
+					info.setSendGoodsTime("-");
+				}
+				else
+				{
+					info.setSendGoodsTime(sdf.format(sendGoodsTime));
+				}
+				
 				info.setStoreName(rs.getString("StoreName"));
 				info.setUserName(rs.getString("UserName"));
 				info.setTotalPrice(rs.getInt("TotalPrice"));

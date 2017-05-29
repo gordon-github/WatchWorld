@@ -176,6 +176,26 @@ public class OrderService
 			orderInfo.setTelephone(telephone);
 			orderInfo.setUserID(userID);
 			
+			for(OrderGoods gi : saveOgList) //遍历所有订单中的商品，更新其中的库存量和销量
+			{
+				int goodsID = gi.getGoodsID();
+				GoodsInfo inf = (new GoodsInfoDao()).findByGoodsID(goodsID); //根据goodsID查找指定商品
+				int oldNumber = inf.getNumber(); //获取旧的库存量
+				int oldSalesVolumes = inf.getSalesVolumes(); //获取旧的销量
+				int newNumber = oldNumber - gi.getBuyAmount(); //计算新的库存
+				int newSalesVolumes = oldSalesVolumes + gi.getBuyAmount(); //计算新的销量
+				//更新库存
+				if((new GoodsInfoDao()).updateNumberByGoodsID(newNumber, goodsID) == false)
+				{
+					flag = false;
+				}
+				//更新销量
+				if((new GoodsInfoDao()).updateSalesVolumesByGoodsID(newSalesVolumes, goodsID) == false)
+				{
+					flag = false;
+				}
+			}
+			
 			if((new OrderInfoDao()).doCreate(orderInfo) == false) //将orderInfo存入数据库
 			{
 				flag = false;
