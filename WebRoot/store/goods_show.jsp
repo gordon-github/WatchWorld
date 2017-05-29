@@ -65,7 +65,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<td><img alt="" src="<%=basePath%>/store/IMG/GoodsPicture/${goods.goodsPicturePath}" height="70px" width="70px"></td>
 						<td>${goods.price}</td>
 						<td>${goods.brand}</td>
-						<td><input type="color" value="${goods.color}"></td>
+						<td>${goods.color}</td>
 						<td>${goods.model}</td>
 						<td>${goods.number}</td>
 						<td>${goods.salesVolumes}</td>
@@ -94,7 +94,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<td><img alt="" src="<%=basePath%>/store/IMG/GoodsPicture/${requestScope.goodsInfo.goodsPicturePath}" height="70px" width="70px"></td>
 						<td>${requestScope.goodsInfo.price}</td>
 						<td>${requestScope.goodsInfo.brand}</td>
-						<td><input type="color" value="${requestScope.goodsInfo.color}"></td>
+						<td>${requestScope.goodsInfo.color}</td>
 						<td>${requestScope.goodsInfo.model}</td>
 						<td>${requestScope.goodsInfo.number}</td>
 						<td>${requestScope.goodsInfo.salesVolumes}</td>

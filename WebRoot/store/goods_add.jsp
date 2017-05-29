@@ -33,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="form-item"><label>商品图片:</label> <input type="file" name="GoodsPicturePath" id="GoodsPicturePath" accept="image/*" /><br> </div>
 				<div class="form-item"><label>价格 :</label>¥<input type="text"	name="Price" id="Price" maxlength="9" /><br> </div>
 				<div class="form-item"><label>品牌 :</label> <input type="text" name="Brand" id="Brand" maxlength="15" /><br></div>
-				<div class="form-item"><label> 颜色 :</label> <input type="color" name="Color" id="Color"	maxlength="15" /><br> </div>
+				<div class="form-item"><label> 颜色 :</label> <input type="text" name="Color" id="Color"	maxlength="15" /><br> </div>
 				<div class="form-item"><label> 型号 :</label> <input type="text"	name="Model" id="Model" maxlength="15" /><br> </div>
 				<div class="form-item"><label>	库存:</label> <input type="text" name="Number" id="Number" maxlength="9" />件<br></div>
 					<input type="text" style="display:none;" name="StoreID"	value="<%=session.getAttribute("StoreID")%>" /> 

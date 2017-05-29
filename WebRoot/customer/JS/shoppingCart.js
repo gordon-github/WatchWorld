@@ -29,12 +29,13 @@ function loadData()
 							"<p>"+n.goodsName+"</p>" +
 							"</a>" +
 							"</div>" +
-							"</td>" +
-							"<td class='price' name='priceTd'>"+n.price+"</td>" +
-							"<td class='amount' name='amountTd'><input type='number' min='1' max='"+n.salesVolumes+"' class='amountVal' value='"+n.amount+"' onchange='calc()'><p>库存："+n.salesVolumes+"</p></td>" +
-							"<td class='money' name='moneyTd' >"+(n.price*n.amount)+"</td>" +
-							"<td class='operate'><p onclick='delData("+n.goodsID+")'>删除</p></td>" +
-							"<td class='selection'><input type='checkbox' name='selectIt' onchange='calcTotal()' value='"+n.goodsID+"'></td>" +
+
+						"</td>" +
+						"<td class='price' name='priceTd'>"+n.price+"</td>" +
+						"<td class='amount' name='amountTd'><input type='number' min='1' max='"+n.number+"' class='amountVal' value='"+n.amount+"' onchange='calc()'><p>库存："+n.number+"</p></td>" +
+						"<td class='money' name='moneyTd' >"+(n.price*n.amount)+"</td>" +
+						"<td class='operate'><p onclick='delData("+n.goodsID+")'>删除</p></td>" +
+						"<td class='selection'><input type='checkbox' name='selectIt' onchange='calcTotal()' value='"+n.goodsID+"'></td>" +
 					"</tr>");
 						});
 				jsonData = json; //保存json数据为全局变量

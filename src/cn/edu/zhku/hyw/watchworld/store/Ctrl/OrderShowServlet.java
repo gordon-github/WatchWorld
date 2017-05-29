@@ -31,11 +31,23 @@ public class OrderShowServlet extends HttpServlet {
 		int storeID= Integer.parseInt((String) session.getAttribute("StoreID"));
 		List<OrderInfo> list = new ArrayList<OrderInfo>();
 		if ("accepted".equals(status)){
+			List<OrderInfo> list2 = new ArrayList<OrderInfo>();
 			list = service.findOrderInfoByStoreID(storeID, "已发货");
-			request.setAttribute("OrderInfo", list);
+			list2 =service.findOrderInfoByStoreID(storeID, "已签收");
+			
+			if (list==null) {
+				request.setAttribute("OrderInfo",list2);
+			}else if(list2==null){
+				request.setAttribute("OrderInfo",list);
+			}else {
+				list.addAll(list2);
+				request.setAttribute("OrderInfo",list);
+			}
 			request.getRequestDispatcher("/store/ordershow_accept.jsp").forward(request, response);
 		} else if("noaccepted".equals(status)){
+			
 			list =service.findOrderInfoByStoreID(storeID, "未发货");
+			
 			request.setAttribute("msg", request.getAttribute("msg"));
 			request.setAttribute("OrderInfo", list);
 			request.getRequestDispatcher("/store/ordershow_noaccept.jsp").forward(request, response);

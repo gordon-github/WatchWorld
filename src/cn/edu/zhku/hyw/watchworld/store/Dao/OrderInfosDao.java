@@ -38,7 +38,12 @@ public class OrderInfosDao {
 			orderInfo.setOrderID(rs.getString("OrderID"));
 			orderInfo.setOrderStatus(rs.getString("OrderStatus"));
 			orderInfo.setPaymentTime(df.format(rs.getTimestamp("PaymentTime")));
-			orderInfo.setSendGoodsTime(df.format(rs.getTimestamp("SendGoodsTime")));
+			
+			Timestamp sendGoodsTime= rs.getTimestamp("SendGoodsTime");
+			System.out.println(sendGoodsTime);
+			if (sendGoodsTime!=null) {
+				orderInfo.setSendGoodsTime(df.format(sendGoodsTime));
+			}
 			orderInfo.setStoreName(rs.getString("StoreName"));
 			orderInfo.setUserName(rs.getString("UserName"));
 			orderInfo.setTotalPrice(rs.getInt("TotalPrice"));

@@ -30,7 +30,7 @@ public class ShoppingCartInfoDao
 	{
 		List<ShoppingCartInfo> dataList = new ArrayList<ShoppingCartInfo>();
 		String sql = "select goods_info.GoodsID,goods_info.GoodsName,goods_info.GoodsPicturePath," +
-				"goods_info.Price,goods_info.SalesVolumes,user_goods.Number " +
+				"goods_info.Price,goods_info.Number,user_goods.Number " +
 				"from goods_info,user_goods " +
 				"where user_goods.UserID=? and goods_info.GoodsID=user_goods.GoodsID";
 		try
@@ -45,8 +45,8 @@ public class ShoppingCartInfoDao
 				data.setGoodsName(rs.getString("GoodsName"));
 				data.setGoodsPicturePath(rs.getString("GoodsPicturePath"));
 				data.setPrice(rs.getFloat("Price"));
-				data.setSalesVolumes(rs.getInt("SalesVolumes"));
-				data.setAmount(rs.getInt("Number"));
+				data.setNumber(rs.getInt("goods_info.Number"));
+				data.setAmount(rs.getInt("user_goods.Number"));
 				dataList.add(data);
 			}
 		} catch (SQLException e)

@@ -38,7 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<input type="file" name="GoodsPicturePath" id="GoodsPicturePath" accept="image/*" ><br></div>
 			<div class="form-item"><label>价格:</label><input type="text" name="Price" id="Price" value="${requestScope.goodsInfo.price}"><br></div>
 			<div class="form-item"><label>品牌:</label><input type="text" name="Brand" id="Brand" value="${requestScope.goodsInfo.brand}"><br></div>
-			<div class="form-item"><label>颜色:</label><input type="color" name="Color"id="Color" value="${requestScope.goodsInfo.color}"><br></div>
+			<div class="form-item"><label>颜色:</label><input type="text" name="Color"id="Color" value="${requestScope.goodsInfo.color}"><br></div>
 			<div class="form-item"><label>型号:</label><input type="text" name="Model" id="Model" value="${requestScope.goodsInfo.model}"><br></div>
 			<div class="form-item"><label>库存:</label><input type="text" name="Number"id="Number" value="${requestScope.goodsInfo.number}"><br></div>
 			<div class="form-item"><label>销量:</label><input type="text" name="SalesVolumes" id="SalesVolumes" readonly="readonly" value="${requestScope.goodsInfo.salesVolumes}"><br></div>
