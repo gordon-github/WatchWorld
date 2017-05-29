@@ -8,5 +8,5 @@ $(document).ready(function(){
 	{
 		alert("订单提交失败！");
 	}
-	location.href=hostpath+"index.jsp"
+	location.href=hostpath+"index.jsp";
 });

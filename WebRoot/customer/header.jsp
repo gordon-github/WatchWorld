@@ -16,7 +16,7 @@ String path = request.getContextPath();
   <body>
       <div id="header">
   		<div id="adminCenter" class="headerFlag">
-  			<a href="">运营商中心</a>
+  			<a href="<%=path%>/admin/login.jsp">运营商中心</a>
   		</div>
   		<div class="headerFlag">|</div>
   		<div id="storeCenter" class="headerFlag">

@@ -10,7 +10,14 @@ function getAddress()
 		url: hostpath+"customer/address/getData",
 		success: function(data)
 		{
-			$("#addressItem input").val(data);
+			if(data.status==302)
+			{
+				location.href=hostpath+"rdHref";
+			}
+			else
+			{
+				$("#addressItem input").val(data);
+			}
 		}
 	});
 }
@@ -24,7 +31,14 @@ function submitForm()
 		async: false,
 		success: function(data)
 		{
-			alert(data);
+			if(data.status==302)
+			{
+				location.href=hostpath+"rdHref";
+			}
+			else
+			{
+				alert(data);
+			}
 		}
 	});
 }
