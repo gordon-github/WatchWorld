@@ -114,6 +114,11 @@ body
 	width: 300px;
 }
 
+.goodsName p
+{
+	font-size: 14px;
+}
+
 .goodsName p, .amount p, .price p
 {
 	line-height: 140px;

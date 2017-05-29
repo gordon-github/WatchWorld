@@ -25,10 +25,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  <div id="header">
-        <a href="#" id="logo"></a>
-  </div>
-  <div id="adminID">
+  <div class="head">
+    <div id="adminID">
    <%
             String AdminID = (String) session.getAttribute("AdminID");
 			String AdminSession = (String) session.getAttribute("AdminSession");
@@ -40,6 +38,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    %>
    <a  class="a2" href="StoreInfoShowServlet">返回主页</a>
    </div>
+   </div>
+  <div id="header">
+        <a href="#" id="logo"></a>
+  </div>
+
   
    <div id="title">
 		 <h2 align="center">管理员一览表</h2>

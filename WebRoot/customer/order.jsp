@@ -44,7 +44,7 @@ String path = request.getContextPath();
 	  					<c:forEach var="j" items="${ i.value }">
 	  						<tr class="contentTr">
 	  							<td style="width:400px">
-	  								<img class="goodsPic" src="<%= path %>/<c:out value='${ j.goodsPicturePath }' />">
+	  								<img class="goodsPic" src="<%= path %>/store/IMG/GoodsPicture/<c:out value='${ j.goodsPicturePath }' />">
 	  								<p class="goodsName"><a href="<%= path %>/customer/goods.jsp?goodsID=<c:out value='${ j.goodsID }' />"><c:out value="${ j.goodsName }" /></a></p>
 	  							</td>
 	  							<td style="width:200px">

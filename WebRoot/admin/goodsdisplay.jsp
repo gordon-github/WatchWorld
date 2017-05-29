@@ -26,6 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  <div class="head">
        <div id="adminID">
    <%
             String AdminID = (String) session.getAttribute("AdminID");
@@ -39,9 +40,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    %>
    <a  class="a2" href="StoreInfoShowServlet">返回主页</a>
    </div>
+   </div>
    
     <div class="Goodsform" align="center">
-    <h2 align="center">活动一览表</h2>
+    <h2 align="center">首页商品一览表</h2>
     <div>
 		   <label>商品ID</label>
 		   <input type="text" id="GoodsID" class="GoodsID">
