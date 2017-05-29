@@ -20,7 +20,7 @@ function loadActivityImg()
 			$.each(json, function(i, n)
 			{
 				$("#activityContainer").append(
-						"<a href='store?storeId="+json[i].storeId+"'>" +
+						"<a href='store/StoreGoodsDisplayServlet?StoreID="+json[i].storeId+"'>" +
 								"<img src='"+json[i].activityPicturePath+"' " +
 										"id='activity"+(i+1)+"' " +
 										"onmouseover='stopCarousel()' " +
@@ -117,7 +117,7 @@ function loadGoods(brand)
 				$("[name="+brand+"]").append(
 					"<div class='goods'>" +
 						"<a	href='customer/goods.jsp?goodsID="+n.goodsID+"' target='_blank'>" +
-							"<img src='"+n.goodsPicturePath+"'>" +
+							"<img src='"+hostpath+"store/IMG/GoodsPicture/"+n.goodsPicturePath+"'>" +
 						"</a>" +
 						"<p class='goodName'>"+n.goodsName+"</p>" +
 						"<p class='goodPrice'>￥"+n.price+"</p>" +

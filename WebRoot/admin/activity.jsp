@@ -34,6 +34,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  <div class="head">
    <div id="adminID">
    <%
             String AdminID = (String) session.getAttribute("AdminID");
@@ -45,6 +46,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			}
    %>
    <a  class="a2" href="StoreInfoShowServlet">返回主页</a>
+   </div>
    </div>
 		
    <div class="Activityform" align="center">
@@ -60,11 +62,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="At" align="center">
 		<label class="item" align="center"><c:out value="${activity.ActivityName }"/></label>
 		<label class="item" align="center"><c:out value ="${activity.StoreID }"/></label>
-		<a href="<%=basePath %>/${activity.ActivityPicturePath }"><img alt="活动图片" src="<%=basePath %>/${activity.ActivityPicturePath }" height="42px "width="100px"></a>
+		
 		<label class="item" align="center"><input type="button" value="删除" id="destory-btn" onclick="deleteActivity('${activity.ActivityName}')"></label>
+		<label class="item" id="pic" ><a href="<%=basePath %>/${activity.ActivityPicturePath }"><img alt="活动图片" src="<%=basePath %>/${activity.ActivityPicturePath }" height="42px "width="100px"></a></label>
     </div>
 		</c:forEach>
-		<div>
+		<div class="tianjia">
 		        <a id="add" href="admin/addactivity.jsp">添 加 活 动</a>
 		</div>
  </div>

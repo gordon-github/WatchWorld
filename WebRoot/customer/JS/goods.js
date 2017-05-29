@@ -13,7 +13,7 @@ function getData()
 		success: function(data)
 		{
 			document.title=data.goodsName+" - 商品详情";
-			$("#picContainer img").attr("src",hostpath+data.goodsPicturePath);
+			$("#picContainer img").attr("src",hostpath+"store/IMG/GoodsPicture/"+data.goodsPicturePath);
 			$("#goodsName p").text(data.goodsName);
 			$("#price p").text("￥"+data.price);
 			$("#brand p").text(data.brand);

@@ -39,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    				<c:forEach var="orderGoods" items="${orderInfo.orderGoods}">
    				<tr >
    				<td class="pic" width="8%" style="text-align:center" >
-                    <img alt="" src="${orderGoods. goodsPicturePath}">
+                    <img alt="" src="<%=basePath %>store/IMG/GoodsPicture/${orderGoods. goodsPicturePath}">
                    </td>
                    <td width="6%">ID:${orderGoods.goodsID}</td> 
                     <td width="35%">
@@ -49,8 +49,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <td width="5%">X${orderGoods.buyAmount}</td>
                     <td width="20%">
                     	品牌:${orderGoods.brand}<br>       
-                   		 颜色: <input type="color" value="${orderGoods.color}" disabled="disabled"> <br>        
-                   		型号: ${orderGoods.model}          
+                   		 颜色:${orderGoods.color}<br>       
+                   		型号: ${orderGoods.model}<br>          
    					</td>
    				</tr>
   				 </c:forEach>
