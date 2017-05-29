@@ -1,7 +1,7 @@
 package cn.edu.zhku.hyw.watchworld.store.JavaBean;
 
 public class OrderGoods {
-	 private  String orderID;
+	 private  int orderID;
 	 private  String goodsID;
 	 private  String goodsName;
 	 private  String storeID;
@@ -13,10 +13,10 @@ public class OrderGoods {
 	 private  String goodsPicturePath;
 	
 	public String getOrderID() {
-		return orderID;
+		return orderID+"";
 	}
 
-	public void setOrderID(String orderID) {
+	public void setOrderID(int orderID) {
 		this.orderID = orderID;
 	}
 

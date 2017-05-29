@@ -1,6 +1,5 @@
 package cn.edu.zhku.hyw.watchworld.store.JavaBean;
 
-import java.sql.Timestamp;
 import java.util.List;
 
 public class OrderInfo<E> {
@@ -13,6 +12,7 @@ public class OrderInfo<E> {
 	 private   int               totalPrice   ;
 	 private   String  				address;
 	 private String  telephone;
+	 private   List<OrderGoods>  orderGoods   ;
 	 public String getTelephone() {
 		return telephone;
 	}
@@ -25,7 +25,7 @@ public class OrderInfo<E> {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	private   List<OrderGoods>  orderGoods   ;
+	
 	 
 	 
 	 public List<OrderGoods> getOrderGoods() {

@@ -56,11 +56,18 @@ public class GoodsUpdateServlet extends HttpServlet {
 				
 			} else {
 
-			
+				String extname=filename.substring(filename.lastIndexOf('.'));
+				String newfilename=System.currentTimeMillis()+extname;
 			String uploadpath=getServletContext().getRealPath("/store/IMG/GoodsPicture");
 			try {
-				goodsPart.write(uploadpath+File.separator+filename);
-				goodsInfo.setGoodsPicturePath(filename);
+				File filePath = new File(uploadpath);
+		        if (!filePath.exists()) {
+					filePath.mkdir();// 创建目录
+				}
+				goodsPart.write(uploadpath+File.separator+newfilename);
+				File file = new File(uploadpath+File.separator+goodsPicturePath);
+				file.delete();
+				goodsInfo.setGoodsPicturePath(newfilename);
 			}catch (Exception e) {
 				e.printStackTrace();
 				request.setAttribute("msg","修改失败" );

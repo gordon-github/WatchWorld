@@ -33,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<%
 	  		String LoginName = (String)session.getAttribute("LoginName");
 	  		String StoreID=(String)session.getAttribute("StoreID");
-	  		if(LoginName!=null&&StoreID!=null)
+	  		if(LoginName!=null&&StoreID!=null&&!("".equals(StoreID)))
 	  		{
 	  		
 		%> 

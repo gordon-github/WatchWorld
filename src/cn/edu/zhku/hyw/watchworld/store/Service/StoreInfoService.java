@@ -33,8 +33,12 @@ public class StoreInfoService {
 	public boolean checkOwner(String owner){
 		return dao.checkOwner(owner);
 	}
-	public void  addStore(StoreInfo storeInfo){
-		dao.addStore(storeInfo);
+	public  int addStore(StoreInfo storeInfo){//注册用户成功时，返回店铺ID
+		int storeID=0;
+			if (dao.addStore(storeInfo)==true) {
+				storeID = dao.checkLoginName(storeInfo.getLoginName());
+			} 
+		return storeID;
 	}
 	public boolean checkLoginNameAndPwd(String loginName,String pwd) {
 		return dao.checkLoginNameAndPwd(loginName,pwd);

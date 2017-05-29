@@ -47,7 +47,12 @@ public class LoginStoreServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		String LoginName=request.getParameter("LoginName");
 		String Pwd=request.getParameter("Pwd");
-//		System.out.println(LoginName+":"+Pwd);
+		if (LoginName==null||Pwd==null) {
+			response.sendRedirect(request.getContextPath()+"/store/login.jsp");
+		} else {
+
+		
+		System.out.println(LoginName+":"+Pwd);
 		StoreInfoService service=new StoreInfoService();
 		JSONObject resultJson=new JSONObject();
 		boolean flag=service.checkLoginName(LoginName);
@@ -63,10 +68,11 @@ public class LoginStoreServlet extends HttpServlet {
 			}else{
 				resultJson.put("flag", "PasswordWrong");
 				}
+			}
+			out.print(resultJson);
+			out.flush();
+			out.close();
 		}
-		out.print(resultJson);
-		out.flush();
-		out.close();
 	}
 
 }

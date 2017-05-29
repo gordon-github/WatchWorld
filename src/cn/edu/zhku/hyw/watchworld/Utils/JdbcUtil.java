@@ -15,7 +15,7 @@ public class JdbcUtil {
 	private static final String DBURL = 
 			"jdbc:mysql://localhost:3306/watch-world?autoReconnection=true&useSSL=false&useUnicode=true&characterEncoding=utf8";
 	private static final String DBUSER = "root";
-	private static final String DBPWD = "A18218018204";
+	private static final String DBPWD = "";
 	
 	public static Connection getConn(){
 		try {

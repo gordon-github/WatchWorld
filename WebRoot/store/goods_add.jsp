@@ -38,7 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="form-item"><label>	库存:</label> <input type="text" name="Number" id="Number" maxlength="9" />件<br></div>
 					<input type="text" style="display:none;" name="StoreID"	value="<%=session.getAttribute("StoreID")%>" /> 
 				<div class="form-item tip"><span><font	color="red" id="msg">${msg}</font></span><br></div>
-				<div class="form-item tip" ><input id="addButn"	type="button" value="添加" onclick="checkform(form_goodsAdd)" /></div>
+				<div class="form-item tip" ><input id="Butn" type="button" value="添加" onclick="checkform(form_goodsAdd)" /></div>
 				
 			</form>
 		</div>

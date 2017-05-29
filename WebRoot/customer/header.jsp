@@ -20,7 +20,7 @@ String path = request.getContextPath();
   		</div>
   		<div class="headerFlag">|</div>
   		<div id="storeCenter" class="headerFlag">
-  			<a href="<%=path%>/store/login.jsp">商家中心</a>
+  			<a href="<%=path%>/store/store_index.jsp">商家中心</a>
   		</div>
 	 	<div class="headerFlag">|</div>
 	 	<div id="shoppingCart" class="headerFlag">

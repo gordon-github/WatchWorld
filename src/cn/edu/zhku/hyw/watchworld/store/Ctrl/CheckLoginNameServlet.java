@@ -55,6 +55,7 @@ public class CheckLoginNameServlet extends HttpServlet {
 		} else {
 			resultJson.put("flag", "false");
 		}
+		System.out.println(resultJson);
 		out.print(resultJson);
 		out.flush();
 		out.close();

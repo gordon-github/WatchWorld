@@ -25,22 +25,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
 
   <body>
-  	<h3>商品修改</h3>
-			<c:if test="${not empty requestScope.goodsInfo}">
-						<form id="form_goodsUpdate" action="<%=basePath %>store/GoodsUpdateServlet" method="post" enctype="multipart/form-data">
-						商品编号:<input type="text" name="GoodsID" id="GoodsID"  readonly="readonly" value="${requestScope.goodsInfo.goodsID}"><br>
-						商品名称:<input type="text" name="GoodsName" id="GoodsName"  value="${requestScope.goodsInfo.goodsName}"><br>
-						商品图片:<img alt="加载失败" src="./store/IMG/GoodsPicture/${requestScope.goodsInfo.goodsPicturePath}" height="70px" width="70px"><br>
-						<input type="text"  style="display:none;" name="f_GoodsPicturePath" value="${requestScope.goodsInfo.goodsPicturePath}">
-						<input type="file" name="GoodsPicturePath" id="GoodsPicturePath" accept="image/*" ><br>
-						价格:<input type="text" name="Price" id="Price" value="${requestScope.goodsInfo.price}"><br>
-						品牌:<input type="text" name="Brand" id="Brand" value="${requestScope.goodsInfo.brand}"><br>
-						颜色:<input type="color" name="Color"id="Color" value="${requestScope.goodsInfo.color}"><br>
-						型号:<input type="text" name="Model" id="Model" value="${requestScope.goodsInfo.model}"><br>
-						库存:<input type="text" name="Number"id="Number" value="${requestScope.goodsInfo.number}"><br>
-						销量:<input type="text" name="SalesVolumes" id="SalesVolumes" readonly="readonly" value="${requestScope.goodsInfo.salesVolumes}"><br>
-						<input type="button" value="修改"  onclick="updateGoods(form_goodsUpdate)"><span ><font color="red" id="Mesg">${requestScope.msg}</font></span>
-					</form>
-			</c:if>
+	<c:if test="${not empty requestScope.goodsInfo}">
+  	<p class="tittle">商品修改</p>
+  	<hr>
+  	<div class="itemContainer">
+  		<div class="data">
+			<form id="form_goodsUpdate" action="<%=basePath %>store/GoodsUpdateServlet" method="post" enctype="multipart/form-data">
+			<div class="form-item"><label>商品编号:</label><input type="text" name="GoodsID" id="GoodsID"  readonly="readonly" value="${requestScope.goodsInfo.goodsID}"><br></div>
+			<div class="form-item"><label>商品名称:</label><input type="text" name="GoodsName" id="GoodsName"  value="${requestScope.goodsInfo.goodsName}"><br></div>
+			<div class="form-item"><label>商品图片:</label><img alt="" src="./store/IMG/GoodsPicture/${requestScope.goodsInfo.goodsPicturePath}" height="70px" width="70px"><br>
+			<input type="text"  align="middle" style="display:none;" name="f_GoodsPicturePath" value="${requestScope.goodsInfo.goodsPicturePath}">
+			<input type="file" name="GoodsPicturePath" id="GoodsPicturePath" accept="image/*" ><br></div>
+			<div class="form-item"><label>价格:</label><input type="text" name="Price" id="Price" value="${requestScope.goodsInfo.price}"><br></div>
+			<div class="form-item"><label>品牌:</label><input type="text" name="Brand" id="Brand" value="${requestScope.goodsInfo.brand}"><br></div>
+			<div class="form-item"><label>颜色:</label><input type="color" name="Color"id="Color" value="${requestScope.goodsInfo.color}"><br></div>
+			<div class="form-item"><label>型号:</label><input type="text" name="Model" id="Model" value="${requestScope.goodsInfo.model}"><br></div>
+			<div class="form-item"><label>库存:</label><input type="text" name="Number"id="Number" value="${requestScope.goodsInfo.number}"><br></div>
+			<div class="form-item"><label>销量:</label><input type="text" name="SalesVolumes" id="SalesVolumes" readonly="readonly" value="${requestScope.goodsInfo.salesVolumes}"><br></div>
+			<div class="form-item tip" ><input id="Butn" type="button" value="修改"  onclick="updateGoods(form_goodsUpdate)"><span ><font color="red" id="Mesg">${requestScope.msg}</font></span></div>
+			</form>
+		</div>
+	</div>
+	</c:if>
+			
   </body>
 </html>

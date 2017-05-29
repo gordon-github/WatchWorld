@@ -33,7 +33,14 @@ public class StoreGoodsDisplayServlet extends HttpServlet {
 	}
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		int storeID = Integer.parseInt(request.getParameter("StoreID"));
+		int storeID=0;
+		try {
+			storeID = Integer.parseInt(request.getParameter("StoreID"));
+			
+		} catch (Exception e) {
+			response.sendRedirect(request.getContextPath()+"/store/login.jsp");
+			return;
+		}
 		System.out.println("storeID:"+storeID);
 		String currPage = request.getParameter("currentPage");
 		// 判断

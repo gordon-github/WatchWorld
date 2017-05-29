@@ -68,10 +68,16 @@ public class AddStoreServlet extends HttpServlet {
 		
 		
 		StoreInfoService service=new StoreInfoService();
-		service.addStore(storeInfo);
-		HttpSession session = request.getSession();
-		session.setAttribute("LoginName", LoginName);
-		session.setAttribute("StoreID", storeInfo.getStoreID()+"");
+		int store = service.addStore(storeInfo);//注册成功返回StoreID
+		if (store==0) {
+			System.out.println("注册失败");
+			response.sendRedirect(request.getContextPath()+"/store/login.jsp");
+		} else {
+
+			HttpSession session = request.getSession();
+			session.setAttribute("LoginName", LoginName);
+			session.setAttribute("StoreID", store+"");
+		}
 		/*PrintWriter out = response.getWriter();
 		out.print();
 		out.flush();

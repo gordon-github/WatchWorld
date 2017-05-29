@@ -24,30 +24,36 @@ public class FdGsInStoreByKeyWServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		int storeID = Integer.parseInt(request.getParameter("StoreID"));
-		String key =request.getParameter("Key");
-		System.out.println("key:"+key);
-		String currPage = request.getParameter("currentPage");
-		// 判断
-		if (currPage == null || "".equals(currPage.trim())){
-			currPage = "0";  	// 第一次访问，设置当前页为0;后续在dao层设置为1;
-		}
-		int currentPage = Integer.parseInt(currPage);
-		PageBean<GoodsInfo> pageBean =new PageBean<GoodsInfo>();
-		pageBean.setCurrentPage(currentPage);
-		pageBean.setPageCount(10);
-		GoodsInfoService gInfoService = new GoodsInfoService(); // 【pageBean已经被dao填充了数据】
-		boolean flag = gInfoService.findAllGoods(storeID,key, pageBean);
-		StoreInfoService sInfoService = new StoreInfoService();
-		StoreInfo storeInfo = sInfoService.findStoreByID(storeID);
+//		try {
+			int storeID = Integer.parseInt(request.getParameter("StoreID"));
+			String key =request.getParameter("Key");
+			String currPage = request.getParameter("currentPage");
+			System.out.println("key:"+key);
+			// 判断
+			if (currPage == null || "".equals(currPage.trim())){
+				currPage = "0";  	// 第一次访问，设置当前页为0;后续在dao层设置为1;
+			}
+			int currentPage = Integer.parseInt(currPage);
+			PageBean<GoodsInfo> pageBean =new PageBean<GoodsInfo>();
+			pageBean.setCurrentPage(currentPage);
+			pageBean.setPageCount(10);
+			GoodsInfoService gInfoService = new GoodsInfoService(); // 【pageBean已经被dao填充了数据】
+			boolean flag = gInfoService.findAllGoods(storeID,key, pageBean);
+			StoreInfoService sInfoService = new StoreInfoService();
+			StoreInfo storeInfo = sInfoService.findStoreByID(storeID);
+			
+			if(flag==true){
+				request.setAttribute("Key", key);
+				request.setAttribute("StoreName", storeInfo.getStoreName());
+				request.setAttribute("StoreID", storeID);
+				request.setAttribute("PageBean", pageBean);
+				request.getRequestDispatcher("/store/store.jsp").forward(request, response);
+			}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			response.sendRedirect(request.getContextPath()+"/store/login.jsp");
+//		}
 		
-		if(flag==true){
-			request.setAttribute("Key", key);
-			request.setAttribute("StoreName", storeInfo.getStoreName());
-			request.setAttribute("StoreID", storeID);
-			request.setAttribute("PageBean", pageBean);
-			request.getRequestDispatcher("/store/store.jsp").forward(request, response);
-		}
 	}
 
 }

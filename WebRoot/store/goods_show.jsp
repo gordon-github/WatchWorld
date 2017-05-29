@@ -43,16 +43,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<tr class="head">
 
 			<th width="5%"> 商品编号 </th>
-			<th >商品名   </th>
+			<th width="30%">商品名   </th>
 			<th width="7">商品图片</th>
-			<th width="6%"> 价格</th>
-			<th width="6%"> 品牌</th>
-			<th >颜色 </th>
-			<th width="10%"> 型号</th>
-			<th width="3%">库存 </th>
-			<th width="3%">销量</th>
-			<th colspan="2" width="5%">操作</th>
-		</tr>               
+			<th width="7%"> 价格</th>
+			<th width="7%"> 品牌</th>
+			<th width="8%">颜色 </th>
+			<th width="9%"> 型号</th>
+			<th width="6%">库存 </th>
+			<th width="6%">销量</th>
+			<th colspan="2" width="10%">操作</th>
+		</tr>  
 		<!-- 迭代数据 -->
 		
 		
@@ -62,7 +62,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<tr>
 						<td>${goods.goodsID}</td>
 						<td>${goods.goodsName}</td>
-						<td><img alt="" src="./store/IMG/GoodsPicture/${goods.goodsPicturePath}" height="70px" width="70px"></td>
+						<td><img alt="" src="<%=basePath%>/store/IMG/GoodsPicture/${goods.goodsPicturePath}" height="70px" width="70px"></td>
 						<td>${goods.price}</td>
 						<td>${goods.brand}</td>
 						<td><input type="color" value="${goods.color}"></td>
@@ -91,7 +91,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<tr>
 						<td>${requestScope.goodsInfo.goodsID}</td>
 						<td>${requestScope.goodsInfo.goodsName}</td>
-						<td><img alt="" src="./store/IMG/GoodsPicture/${requestScope.goodsInfo.goodsPicturePath}" height="70px" width="70px"></td>
+						<td><img alt="" src="<%=basePath%>/store/IMG/GoodsPicture/${requestScope.goodsInfo.goodsPicturePath}" height="70px" width="70px"></td>
 						<td>${requestScope.goodsInfo.price}</td>
 						<td>${requestScope.goodsInfo.brand}</td>
 						<td><input type="color" value="${requestScope.goodsInfo.color}"></td>

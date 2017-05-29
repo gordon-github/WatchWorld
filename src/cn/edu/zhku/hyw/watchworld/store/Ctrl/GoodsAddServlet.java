@@ -57,12 +57,16 @@ public class GoodsAddServlet extends HttpServlet {
 		String extname=filename.substring(filename.lastIndexOf('.'));
 		String newfilename=System.currentTimeMillis()+extname;
 		String uploadpath=getServletContext().getRealPath("/store/IMG/GoodsPicture");
+		File filePath = new File(uploadpath);
+        if (!filePath.exists()) {
+			filePath.mkdir();// 创建目录
+		}
 		System.out.println("filename:"+filename);
 		System.out.println("extname:"+extname);
 		System.out.println("newfilename:"+newfilename);
 		System.out.println("uploadpath:"+uploadpath);
 		try {
-			goodsPart.write(uploadpath+File.separator+filename);
+			goodsPart.write(uploadpath+File.separator+newfilename);
 			GoodsInfo goodsInfo=new GoodsInfo();
 			goodsInfo.setGoodsName(goodsName);
 			goodsInfo.setPrice(Integer.parseInt(price));

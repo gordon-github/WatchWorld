@@ -39,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="form-item"><label>店铺名称:</label><input type="text" id="storeName" name="StoreName" value="${StoreInfo.storeName}"><br></div>
 	<div class="form-item"><label>手机号码:</label><input type="text" id="telephone" name="Telephone" value="${StoreInfo.telephone}"><br></div>
 	 <div class="form-item tip"><span ><font color="red" id="msg">${requestScope.msg}</font></span></div>
-	<div class="form-item tip"><input type="button" id="addButn" value="保存" onclick="updateStore()"></div>
+	<div class="form-item tip"><input type="button" id="Butn" value="保存" onclick="updateStore()"></div>
 	</form>
 	</div>
 	</div>

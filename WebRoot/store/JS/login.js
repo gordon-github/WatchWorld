@@ -18,7 +18,7 @@ function loginStore(){
         {"LoginName":LoginName,"Pwd":Pwd} ,
         timeout:30000,//超时时间：30秒  
         dataType:"json",//设置返回数据的格式  
-        async:true, //
+        async:false, //
         success:function(data){  //请求成功后的回调函数 data为json格式 
            var flag = data.flag;
 //           alert(flag);
@@ -42,7 +42,7 @@ function logout(){
 	$.ajax({  
         type:"POST",//请求方式  
         url:server_context+"/store/LogOutServlet",//发送请求地址 
-        async:true, 
+        async:false, 
         success:function(){  
         	   top.location.href=server_context+"/store/login.jsp";
            },
@@ -56,5 +56,5 @@ function registerStore(){
 	top.location.href=server_context+"/store/register.jsp";
 }
 function myStore(StoreID){
-	top.location.href=server_context+"/store/StoreGoodsDisplayServlet?storeID="+StoreID;
+	top.location.href=server_context+"/store/StoreGoodsDisplayServlet?StoreID="+StoreID;
 }

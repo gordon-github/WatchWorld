@@ -10,7 +10,7 @@ import cn.edu.zhku.hyw.watchworld.store.JavaBean.StoreInfo;
  *
  */
 public interface StoreInfoDao {
-	public void addStore(StoreInfo storeInfo);//注册用户
+	public boolean addStore(StoreInfo storeInfo);//注册用户
 	public void deleteStore(int StoreID);//删除店铺
 	public boolean updateStore(StoreInfo storeInfo);//修改店铺
 	public List<StoreInfo>  findStore();//查找所有店铺
