@@ -23,9 +23,14 @@ DROP TABLE IF EXISTS `activity`;
 CREATE TABLE `activity` (
   `ActivityPicturePath` varchar(45) collate utf8_czech_ci default NULL,
   `StoreID` int(11) default NULL,
+  `ActivityName` varchar(255) collate utf8_czech_ci default NULL,
   KEY `FK_activity` (`StoreID`),
   CONSTRAINT `FK_activity` FOREIGN KEY (`StoreID`) REFERENCES `store_info` (`StoreID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci CHECKSUM=1 DELAY_KEY_WRITE=1 ROW_FORMAT=DYNAMIC;
+
+/*Data for the table `activity` */
+
+insert  into `activity`(`ActivityPicturePath`,`StoreID`,`ActivityName`) values ('admin/IMG/Activity/1496068165175.jpg',8907,'六一活动'),('admin/IMG/Activity/1496068387329.jpg',8908,'端午促销'),('admin/IMG/Activity/1496323303156.jpg',8908,'618提前放假');
 
 /*Table structure for table `admin_info` */
 
@@ -38,6 +43,10 @@ CREATE TABLE `admin_info` (
   PRIMARY KEY  (`AdminID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
 
+/*Data for the table `admin_info` */
+
+insert  into `admin_info`(`AdminID`,`Pwd`,`Session`) values ('123','123',1),('adv','adv',2);
+
 /*Table structure for table `goods_display` */
 
 DROP TABLE IF EXISTS `goods_display`;
@@ -45,10 +54,13 @@ DROP TABLE IF EXISTS `goods_display`;
 CREATE TABLE `goods_display` (
   `GoodsID` int(11) default NULL,
   `Brand` varchar(15) collate utf8_czech_ci default NULL,
-  `Time` time default NULL,
   KEY `FK_goods_display` (`GoodsID`),
   CONSTRAINT `FK_goods_display` FOREIGN KEY (`GoodsID`) REFERENCES `goods_info` (`GoodsID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci CHECKSUM=1 DELAY_KEY_WRITE=1 ROW_FORMAT=DYNAMIC;
+
+/*Data for the table `goods_display` */
+
+insert  into `goods_display`(`GoodsID`,`Brand`) values (23,'天王'),(24,'天王'),(26,'飞亚达'),(27,'天王'),(28,'天王'),(30,'飞亚达'),(31,'飞亚达'),(32,'飞亚达');
 
 /*Table structure for table `goods_info` */
 
@@ -70,6 +82,10 @@ CREATE TABLE `goods_info` (
   CONSTRAINT `FK_goods_info` FOREIGN KEY (`StoreID`) REFERENCES `store_info` (`StoreID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci CHECKSUM=1 DELAY_KEY_WRITE=1 ROW_FORMAT=DYNAMIC;
 
+/*Data for the table `goods_info` */
+
+insert  into `goods_info`(`GoodsID`,`GoodsName`,`GoodsPicturePath`,`Price`,`Brand`,`Color`,`Model`,`Number`,`StoreID`,`SalesVolumes`) values (23,'正品天王表休闲男表皮带','1496076333595.jpg',949,'天王','黑色','3969',97,8907,3),(24,'天王表正品男表防水自动机械表 ','1496049514872.jpg',1099,'天王','黑色','5845',96,8907,4),(25,'男新款全自动海鸥机械手表','1496050252669.jpg',1280,'海鸥','棕色','D519.405',100,8908,0),(26,'飞亚达手表男正品石英表男表','1496050378267.jpg',688,'飞亚达','棕色','Y01646-Q3.BBXLB',97,8908,3),(27,'天王表正品时尚潮流情侣表','1496316801814.jpg',520,'天王','棕色','3874',100,8907,0),(28,'天王表自动机械表','1496316909526.jpg',899,'天王','银色','7883',100,8907,0),(29,'天王表新品男士手表潮流情侣表','1496317119574.jpg',889,'天王','棕色','N7765',100,8907,0),(30,'飞亚达女表 唯路时 精钢大表盘','1496317988010.jpg',399,'飞亚达','棕色','1121',100,8907,0),(31,'飞亚达手表男自动机械表防水','1496318083852.jpg',1559,'飞亚达','黑色','GA802057',100,8907,0),(32,'飞亚达石英表女表男女情侣表','1496318245117.jpg',899,'飞亚达','银色','JXHZ-L246',100,8907,0),(33,' 摄影师系列炫酷精钢带男士','1496318405922.jpg',4989,'飞亚达','黑色','GA8486',100,8907,0);
+
 /*Table structure for table `order_goods` */
 
 DROP TABLE IF EXISTS `order_goods`;
@@ -88,6 +104,8 @@ CREATE TABLE `order_goods` (
   KEY `FK_order_goods` (`OrderID`),
   CONSTRAINT `FK_order_goods` FOREIGN KEY (`OrderID`) REFERENCES `order_info` (`OrderID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci CHECKSUM=1 DELAY_KEY_WRITE=1 ROW_FORMAT=DYNAMIC;
+
+/*Data for the table `order_goods` */
 
 /*Table structure for table `order_info` */
 
@@ -109,6 +127,8 @@ CREATE TABLE `order_info` (
   CONSTRAINT `FK_userID` FOREIGN KEY (`UserID`) REFERENCES `user_info` (`UserID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci CHECKSUM=1 DELAY_KEY_WRITE=1 ROW_FORMAT=DYNAMIC;
 
+/*Data for the table `order_info` */
+
 /*Table structure for table `store_info` */
 
 DROP TABLE IF EXISTS `store_info`;
@@ -126,6 +146,10 @@ CREATE TABLE `store_info` (
   UNIQUE KEY `StoreName` (`StoreName`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci MIN_ROWS=8888 CHECKSUM=1 DELAY_KEY_WRITE=1 ROW_FORMAT=DYNAMIC;
 
+/*Data for the table `store_info` */
+
+insert  into `store_info`(`StoreID`,`LoginName`,`Pwd`,`StoreName`,`Owner`,`RegTime`,`Telephone`) values (8907,'1234','1234','1234旗舰店','1234','2017年05月29日','18814142866'),(8908,'adc','adc','adc旗舰店','adc','2017年05月29日','13214142866');
+
 /*Table structure for table `user_data` */
 
 DROP TABLE IF EXISTS `user_data`;
@@ -142,6 +166,10 @@ CREATE TABLE `user_data` (
   CONSTRAINT `FK_userdata` FOREIGN KEY (`UserId`) REFERENCES `user_info` (`UserID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
 
+/*Data for the table `user_data` */
+
+insert  into `user_data`(`UserId`,`UserName`,`Age`,`Sex`,`Portrait`,`Address`,`Telephone`) values ('123456','老王',32,'男','customer/IMG/portrait/123456.jpg','广东省广州市海珠区仲恺路500号','14567891134');
+
 /*Table structure for table `user_goods` */
 
 DROP TABLE IF EXISTS `user_goods`;
@@ -156,6 +184,8 @@ CREATE TABLE `user_goods` (
   CONSTRAINT `FK_user_info` FOREIGN KEY (`UserID`) REFERENCES `user_info` (`UserID`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
 
+/*Data for the table `user_goods` */
+
 /*Table structure for table `user_info` */
 
 DROP TABLE IF EXISTS `user_info`;
@@ -165,6 +195,10 @@ CREATE TABLE `user_info` (
   `Pwd` varchar(15) collate utf8_czech_ci NOT NULL default '',
   PRIMARY KEY  (`UserID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci CHECKSUM=1 DELAY_KEY_WRITE=1 ROW_FORMAT=DYNAMIC;
+
+/*Data for the table `user_info` */
+
+insert  into `user_info`(`UserID`,`Pwd`) values ('123456','123456');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
