@@ -23,7 +23,7 @@ function getData()
 			$("#SalesVolumes p").text(data.salesVolumes);
 			$("#storeName a").attr("href",(hostpath+"store/StoreGoodsDisplayServlet?StoreID="+data.storeID));
 			$("#storeName a").text(data.storeName);
-			$("#amount").attr("max",data.salesVolumes);
+			$("#amount").attr("max",data.number);
 		}
 	});
 }
