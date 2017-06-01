@@ -1,4 +1,12 @@
 @CHARSET "UTF-8";
+body{
+	margin:0;
+	padding:0;
+}
+.head{
+	width:100%;
+	height:50px;
+}
 #adminID{
 	float:right;
 	width:200px;
@@ -24,7 +32,7 @@
 	margin:auto;
 	font-family:仿宋;
 	font-size:18px;
-	margin-top:200px;
+	margin-top:150px;
 }
 .form-item{
    width:400px;

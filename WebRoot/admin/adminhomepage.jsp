@@ -103,7 +103,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<label class="item" align="center"><c:out value ="${store.Owner }"/></label>
 		<label class="item2" align="center"><c:out value ="${store.Telephone }"/></label>
 		<label class="item2" align="center"><c:out value ="${store.RegTime }"/></label>
-		<label class="item" align="center"><a  class="a" href="login.jsp">进铺逛逛</a></label>
+		<label class="item" align="center"><a  class="a" href="<%=path %>/store/StoreGoodsDisplayServlet?StoreID=${store.StoreID}">进铺逛逛</a></label>
 		<label class="item" align="center"><input type="button" value="封铺" id="destory" onclick="deleteStore('${store.StoreID }')"></label>
         </div>  
 		</c:forEach>
