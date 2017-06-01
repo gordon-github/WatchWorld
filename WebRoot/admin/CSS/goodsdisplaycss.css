@@ -42,7 +42,7 @@ a,.a2
 	width:470px;
 	font-family:仿宋;
 	margin:auto;	
-	margin-top:120px;
+	margin-top:0px;
 }
 #destory-btn{
 	border:none;
@@ -74,6 +74,9 @@ a,.a2
     /* color:white; */
     background:rgba(255,204,51,0.1);
     /* background-color:white; */
+}
+#pic{
+	padding-top:0;
 }
 #add-btn{
 	font-size:12px;

@@ -53,6 +53,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <label class="item">商品ID</label>
      <label class="item">品 牌</label>
     <label class="item">管 理</label>
+    <label class="item">商品图片</label>
      </div>
      
      <c:forEach var="goods" items = "${Goods }" varStatus="vs">
@@ -60,6 +61,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<label class="item" align="center"><c:out value="${goods.GoodsID }"/></label>
 		<label class="item" align="center"><c:out value ="${goods.Brand }"/></label>
 		<label class="item" align="center"><input type="button" value="删除" id="destory-btn" onclick="deleteGoods('${goods.GoodsID}')"></label>
+
     </div>
 		</c:forEach>
 

@@ -25,6 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  <div class="head">
      <div id="adminID">
    <%
             String AdminID = (String) session.getAttribute("AdminID");
@@ -37,6 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    %>
    <a  class="a2" href="ActivityAddServlet?operate=select">返回上页</a>
    </div>
+    </div>    
         
   	<div class="addactivity">
   	 <h2 class="ah2" align="center">活 动 信 息 表</h2>
