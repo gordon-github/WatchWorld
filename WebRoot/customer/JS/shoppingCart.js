@@ -13,7 +13,7 @@ function loadData()
 		dataType: "json",
 		success: function(json)
 		{
-			if(data.status==302)
+			if(json.status==302)
 			{
 				location.href=hostpath+data.rdHref;
 			}

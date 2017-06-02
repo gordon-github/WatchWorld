@@ -68,11 +68,11 @@ public class InsertIntoShoppingCartServlet extends HttpServlet
 			boolean flag = service.InsertIntoShoppingCart(goodsID, userID, amount);
 			if(flag == true)
 			{
-				out.print("添加成功！");
+				out.print("{\"flag\":\"添加成功！\"}");
 			}
 			else
 			{
-				out.print("添加失败！");
+				out.print("{\"flag\":\"添加失败！\"}");
 			}
 		}
 	}

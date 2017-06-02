@@ -64,7 +64,7 @@ function submitForm()
 		dataType: "json",
 		success: function(data)
 		{
-			if(json.status==302)
+			if(data.status==302)
 			{
 				location.href=hostpath+data.rdHref;
 			}

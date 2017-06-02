@@ -52,7 +52,7 @@ function insertIntoShoppingCart()
 		var para=location.search;
 		var amount=$("#amount").val();
 		$.ajax({
-			type: "post",
+			type: "get",
 			url: hostpath+"customer/shoppingCart/insertIntoShoppingCart"+para+"&amount="+amount,
 			dataType: "json",
 			success: function(data)
@@ -69,7 +69,7 @@ function insertIntoShoppingCart()
 				}
 				else
 				{
-					alert(data);
+					alert(data.flag);
 				}
 			}
 		});
