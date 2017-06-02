@@ -38,7 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<input type="button" value="搜索" onclick="findGoods()"><span ><font color="red" id="Mesg">${requestScope.msg}</font></span>
 	</form>
 	</div>
-	<table border="1" width="90%" align="center" cellpadding="1"
+	<table border="1" width="85%" align="center" cellpadding="1"
 		cellspacing="0" style="text-align: center;">
 		<tr class="head">
 
