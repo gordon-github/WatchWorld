@@ -54,12 +54,18 @@ function insertIntoShoppingCart()
 		$.ajax({
 			type: "post",
 			url: hostpath+"customer/shoppingCart/insertIntoShoppingCart"+para+"&amount="+amount,
+			dataType: "json",
 			success: function(data)
 			{
 				if(data == "refuse")
 				{
 					alert("您还未登录，无法加入购物车！");
 					location.href=hostpath+"customer/login.jsp";
+				}
+				else if(data.status==302)
+				{
+					alert("您还未登录，无法加入购物车！");
+					location.href=hostpath+data.rdHref;
 				}
 				else
 				{
