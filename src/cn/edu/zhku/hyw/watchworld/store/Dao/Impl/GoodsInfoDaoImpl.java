@@ -184,7 +184,7 @@ public class GoodsInfoDaoImpl implements GoodsInfoDao {
 			conn=JdbcUtil.getConn();
 			String sql = "select count(*) from goods_info where GoodsName like ?";
 			stmt = conn.prepareStatement(sql);
-			stmt.setString(1,key);
+			stmt.setString(1,"%"+key+"%");
 			rs = stmt.executeQuery();
 			rs.next();
 			return rs.getInt(1);
