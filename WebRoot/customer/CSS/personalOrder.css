@@ -51,43 +51,69 @@ body
 {
 	width: 100%;
 	height: auto;
-	min-height: 300px;
+	min-height: 170px;
 	padding: 0px;
 	margin: 10px auto;
+	border: 2px solid #EEEEEE;
 }
 
 .orderPart
 {
-	height: 100px;
-	background-color: #197DD5;
+	height: auto;
+	min-height: 30px;
 	padding: 0px;
 	margin: 0px;
+}
+
+.outline
+{
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	width: 38%;
+	height: 30px;
+}
+
+.drop
+{
+	width: 30px;
+	height: 30px;
+	margin: 0px;
+}
+
+.particular
+{
+	height: 150px;
+	display: none;
 }
 
 .halfContainer
 {
 	float: left;
-	width: 40%;
+	width: 38%;
 }
 
-.halfContainer p
+.halfContainer p, .outline p
 {
-	margin: 0px;
+	margin: 0px 0px 0px 5px;
 	font-size: 14px;
-	color: #FFFFFF;
+	color: #000000;
+	line-height: 30px;
 }
 
 .btnContainer
 {
-	width: 20%;
-	height: 100px;
-	float: left;
+	width: 23%;
+	height: 30px;
+	margin: 1px 3px 1px 3px;
+	float: right;
 }
 
 .btnContainer input
 {
-	margin: 10px auto;
+	margin: 0px auto;
 	float: right;
+	font-size: 16px;
 }
 
 .goodsPart
@@ -97,8 +123,6 @@ body
 	min-height: 140px;
 	padding: 0px;
 	margin: 0px;
-	background-color: #C3E7E1;
-	border: 1px solid #FFFFFF;
 }
 
 .goodsName, .goodsAttr, .amount, .price
