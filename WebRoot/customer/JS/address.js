@@ -12,7 +12,7 @@ function getAddress()
 		{
 			if(data.status==302)
 			{
-				location.href=hostpath+"rdHref";
+				location.href=hostpath+data.rdHref;
 			}
 			else
 			{
@@ -33,7 +33,7 @@ function submitForm()
 		{
 			if(data.status==302)
 			{
-				location.href=hostpath+"rdHref";
+				location.href=hostpath+data.rdHref;
 			}
 			else
 			{
