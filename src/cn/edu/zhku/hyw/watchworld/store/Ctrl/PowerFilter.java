@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 @WebFilter(urlPatterns={"/store/ChangeStatusServlet",
 						"/store/DeleteGoodsServlet",
-						"/store/FdGsInStoreByKeyWServlet",
 						"/store/FindGoodsServlet",
 						"/store/FindStoreServlet",
 						"/store/GoodsAddServlet",
