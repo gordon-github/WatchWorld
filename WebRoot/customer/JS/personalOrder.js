@@ -18,38 +18,49 @@ function loadData()
 			{
 				$("#contentContainer").append("<div class='orderItem' id='"+n.orderID+"'>" +
 							"<div class='orderPart'>" +
-								"<div class='halfContainer'>" +
+								"<div class='outline'>" +
 									"<p>订单编号："+n.orderID+"</p>" +
-									"<p>订单状态："+n.orderStatus+"</p>" +
-									"<p>成交时间："+n.paymentTime+"</p>" +
-									"<p>发货时间："+n.sendGoodsTime+"</p>" +
-									"<p>卖方："+n.storeName+"</p>" +
 								"</div>" +
-								"<div class='halfContainer'>" +
-									"<p>买方："+n .userName+"</p>" +
-									"<p>总价：￥"+n.totalPrice+"</p>" +
-									"<p>收货地址："+n.address+"</p>" +
-									"<p>联系方式："+n.telephone+"</p>" +
+								"<div class='outline'>" +
+									"<p>订单状态："+n.orderStatus+"</p>" +
 								"</div>" +
 								"<div class='btnContainer'>" +
+									"<img class='drop' src='"+hostpath+"customer/IMG/drop.png' onclick='drop("+n.orderID+")'>" +
 									"<input type='button' value='撤销' onclick='cancel(\""+n.orderID+"\")' id='cancel"+n.orderID+"'>" +
-									"<input type='button' value='签收' onclick='signfor(\""+n.orderID+"\")' id='signFor"+n.orderID+"'>" +
+									"<input type='button' value='确认收货' onclick='signfor(\""+n.orderID+"\")' id='signFor"+n.orderID+"'>" +
 								"</div>" +
+								"<div class='particular'>" +
+									"<div class='halfContainer'>" +
+										"<p>成交时间："+n.paymentTime+"</p>" +
+										"<p>发货时间："+n.sendGoodsTime+"</p>" +
+										"<p>卖方："+n.storeName+"</p>" +
+										"<p>买方："+n .userName+"</p>" +
+									"</div>" +
+									"<div class='halfContainer'>" +
+										"<p>总价：￥"+n.totalPrice+"</p>" +
+										"<p>收货地址："+n.address+"</p>" +
+										"<p>联系方式："+n.telephone+"</p>" +
+									"</div>" +
+								"</div>" +
+
 							"</div>" +
 						"</div>");
 				getGoodsInfo(n.orderID);
 				if(n.orderStatus == "未发货")
 				{
 					$("#signFor"+n.orderID).attr("disabled", "true");
+					$("#"+n.orderID+" .orderPart").css("background-color", "#B6F9F2");
 				}
 				if(n.orderStatus == "已发货")
 				{
 					$("#cancel"+n.orderID).attr("disabled", "true");
+					$("#"+n.orderID+" .orderPart").css("background-color", "#99FC8F");
 				}
 				if(n.orderStatus == "已签收")
 				{
 					$("#cancel"+n.orderID).attr("disabled", "true");
 					$("#signFor"+n.orderID).attr("disabled", "true");
+					$("#"+n.orderID+" .orderPart").css("background-color", "#EEEEEE");
 				}
 			});
 		}
@@ -116,4 +127,9 @@ function signfor(orderID)
 			location.reload(true);
 		}
 	});
+}
+
+function drop(orderID)
+{
+	$("#"+orderID+" .particular").slideToggle();
 }

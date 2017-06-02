@@ -71,7 +71,7 @@ String path = request.getContextPath();
   			<div id="submitPanel">
   				<p id="totalMoney">实付款：<span>￥<c:out value="${ totalMoney }" /></span></p>
   				<p id="addressBar">寄送至：<span id="targetAddress"><c:out value="${ userData.address }" /></span></p>
-  				<p id="user">收货人：<c:out value="${ userData.userName }" /></p>
+  				<p id="user">收货人：<span><c:out value="${ userData.userName }" /></span></p>
   				<p id="telephone">联系方式：<c:out value="${ userData.telephone }" /></p>
   				<input type="button" value="提交订单" id="submitBtn" onclick="submitOrder()">
   			</div>

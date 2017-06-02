@@ -191,31 +191,48 @@ table, tr
 
 #pwdContainer
 {
-	height: 30px;
-	padding: 0px;
+	height: 150px;
+	padding: 10px;
 	margin: 0px;
 	float: right;
+	border: 3px solid #FF0036;
 }
 
-#pwdConatainer p
+.innerContainer
+{
+	height: 40px;
+	padding: 0px;
+	margin: 5px 0px 5px 0px;
+}
+
+#pwdContainer p
 {
 	font-size: 20px;
 	line-height: 30px;
+	margin-bottom: 0px;
 }
 
 #pwd
 {
-	height: 30px;
+	margin: 0px;
+	padding: 0px;
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 35px;
+	float: left;
 }
 
 #pwdSubmit
 {
-	width: 60px;
-	height: 30px;
+	float: left;
+	width: 150px;
+	height: 40px;
 	color: #FFFFFF;
 	background-color: #FF0036;
 	border: 0px;
-	font-size: 14px;
+	font-size: 20px;
+	margin-left: 10px;
 }
 
 #footer

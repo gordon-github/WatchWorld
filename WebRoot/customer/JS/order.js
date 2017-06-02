@@ -9,10 +9,15 @@ function affirmAddress()
 
 function submitOrder()
 {
+	var id=$("#user span").text();
 	$("#submitBtn").remove();
-	$("#submitPanel").append("<div id='pwdContainer'><p>输入密码：</p>" +
-			"<input type='password' id='pwd' />" +
-			"<input type='button' id='pwdSubmit' value='确定' onclick='checkPwd()' />" +
+	$("#submitPanel").append("<div id='pwdContainer'><p>请输入密码：</p>" +
+			"<div class='innerContainer'>" +
+				"<input type='password' id='pwd' />" +
+				"<input type='button' id='pwdSubmit' value='立即支付' onclick='checkPwd()' /><br>" +
+			"</div>" +
+				"<input type='radio' name='pay' checked>微信支付("+id+")<br>" +
+				"<input type='radio' name='pay'>支付宝支付("+id+")<br>" +
 			"</div>");
 }
 
