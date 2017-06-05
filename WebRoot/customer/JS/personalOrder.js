@@ -25,7 +25,7 @@ function loadData()
 									"<p>订单状态："+n.orderStatus+"</p>" +
 								"</div>" +
 								"<div class='btnContainer'>" +
-									"<img class='drop' src='"+hostpath+"customer/IMG/drop.png' onclick='drop("+n.orderID+")'>" +
+									"<img class='drop' src='"+hostpath+"customer/IMG/drop.png' onclick='drop(\""+n.orderID+"\")'>" +
 									"<input type='button' value='撤销' onclick='cancel(\""+n.orderID+"\")' id='cancel"+n.orderID+"'>" +
 									"<input type='button' value='确认收货' onclick='signfor(\""+n.orderID+"\")' id='signFor"+n.orderID+"'>" +
 								"</div>" +

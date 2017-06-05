@@ -1,3 +1,3 @@
 eclipse.preferences.version=1
-validator.Checked=WebRoot/customer/JS/jquery-3.2.0.min.js,WebRoot/store/JS/jquery-3.2.0.min.js,WebRoot/admin/JS/jquery-3.2.0.min.js,WebRoot/store/JS/jquery-1.6.2.min.js
+validator.Checked=WebRoot/store/JS/jquery-3.2.0.min.js,WebRoot/customer/JS/jquery-3.2.0.min.js,WebRoot/admin/JS/jquery-3.2.0.min.js,WebRoot/store/JS/jquery-1.6.2.min.js
 validator.Unchecked=

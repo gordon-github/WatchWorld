@@ -30,7 +30,7 @@ CREATE TABLE `activity` (
 
 /*Data for the table `activity` */
 
-insert  into `activity`(`ActivityPicturePath`,`StoreID`,`ActivityName`) values ('admin/IMG/Activity/1496068165175.jpg',8907,'六一活动'),('admin/IMG/Activity/1496068387329.jpg',8908,'端午促销'),('admin/IMG/Activity/1496323303156.jpg',8908,'618提前放假');
+insert  into `activity`(`ActivityPicturePath`,`StoreID`,`ActivityName`) values ('admin/IMG/Activity/1.jpg',8908,'端午促销'),('admin/IMG/Activity/2.jpg',8908,'六一活动'),('admin/IMG/Activity/3.jpg',8908,'六一提前放假');
 
 /*Table structure for table `admin_info` */
 
@@ -60,7 +60,7 @@ CREATE TABLE `goods_display` (
 
 /*Data for the table `goods_display` */
 
-insert  into `goods_display`(`GoodsID`,`Brand`) values (23,'天王'),(24,'天王'),(26,'飞亚达'),(27,'天王'),(28,'天王'),(30,'飞亚达'),(31,'飞亚达'),(32,'飞亚达');
+insert  into `goods_display`(`GoodsID`,`Brand`) values (26,'天王'),(27,'天王'),(28,'飞亚达'),(29,'飞亚达'),(30,'飞亚达'),(25,'天王'),(31,'飞亚达'),(32,'天王');
 
 /*Table structure for table `goods_info` */
 
@@ -84,7 +84,7 @@ CREATE TABLE `goods_info` (
 
 /*Data for the table `goods_info` */
 
-insert  into `goods_info`(`GoodsID`,`GoodsName`,`GoodsPicturePath`,`Price`,`Brand`,`Color`,`Model`,`Number`,`StoreID`,`SalesVolumes`) values (23,'正品天王表休闲男表皮带','1496076333595.jpg',949,'天王','黑色','3969',97,8907,3),(24,'天王表正品男表防水自动机械表 ','1496049514872.jpg',1099,'天王','黑色','5845',96,8907,4),(25,'男新款全自动海鸥机械手表','1496050252669.jpg',1280,'海鸥','棕色','D519.405',100,8908,0),(26,'飞亚达手表男正品石英表男表','1496050378267.jpg',688,'飞亚达','棕色','Y01646-Q3.BBXLB',97,8908,3),(27,'天王表正品时尚潮流情侣表','1496316801814.jpg',520,'天王','棕色','3874',100,8907,0),(28,'天王表自动机械表','1496316909526.jpg',899,'天王','银色','7883',100,8907,0),(29,'天王表新品男士手表潮流情侣表','1496317119574.jpg',889,'天王','棕色','N7765',100,8907,0),(30,'飞亚达女表 唯路时 精钢大表盘','1496317988010.jpg',399,'飞亚达','棕色','1121',100,8907,0),(31,'飞亚达手表男自动机械表防水','1496318083852.jpg',1559,'飞亚达','黑色','GA802057',100,8907,0),(32,'飞亚达石英表女表男女情侣表','1496318245117.jpg',899,'飞亚达','银色','JXHZ-L246',100,8907,0),(33,' 摄影师系列炫酷精钢带男士','1496318405922.jpg',4989,'飞亚达','黑色','GA8486',100,8907,0);
+insert  into `goods_info`(`GoodsID`,`GoodsName`,`GoodsPicturePath`,`Price`,`Brand`,`Color`,`Model`,`Number`,`StoreID`,`SalesVolumes`) values (25,'男新款全自动机械手表','1.jpg',1280,'天王','棕色','D519.405',100,8908,0),(26,'男正品石英表男表','2.jpg',688,'天王','棕色','Y01646-Q3.BBXLB',96,8908,4),(27,'天王男正品石英表男表','6.jpg',888,'天王','黑色','W4',98,8909,2),(28,'男正品石英表男表','3.jpg',888,'飞亚达','银色','89386',100,8908,0),(29,'黑色男正品石英表男表','4.jpg',899,'飞亚达','黑色','1242',100,8908,0),(30,'棕色男正品石英表男表','5.jpg',990,'飞亚达','棕色','8863',100,8908,0),(31,'男新款全自动机械手表','7.jpg',999,'飞亚达','黑色','8832',100,8909,0),(32,'新款全自动机械手表','8.jpg',2221,'天王','白色','3953',100,8909,0);
 
 /*Table structure for table `order_goods` */
 
@@ -148,7 +148,7 @@ CREATE TABLE `store_info` (
 
 /*Data for the table `store_info` */
 
-insert  into `store_info`(`StoreID`,`LoginName`,`Pwd`,`StoreName`,`Owner`,`RegTime`,`Telephone`) values (8907,'1234','1234','1234旗舰店','1234','2017年05月29日','18814142866'),(8908,'adc','adc','adc旗舰店','adc','2017年05月29日','13214142866');
+insert  into `store_info`(`StoreID`,`LoginName`,`Pwd`,`StoreName`,`Owner`,`RegTime`,`Telephone`) values (8908,'adc','adc','adc旗舰店','adc','2017年05月29日','13214142866'),(8909,'888','888','1234','老王','2017年06月02日','18814142845');
 
 /*Table structure for table `user_data` */
 
